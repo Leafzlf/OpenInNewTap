@@ -1,0 +1,50 @@
+{
+	"content_scripts": [
+		{
+			"all_frames": true,
+			"js": [
+				"lib/jquery-1.3.2.min.js",
+				"content_script/content_script.js"
+			],
+			"exclude_matches": [
+				"*://pan.baidu.com/*",
+				"*://www.flickr.com/*",
+				"*://*.jd.com/*"
+			],
+			"matches": [
+				"http://*/*",
+				"https://*/*",
+				"ftp://*/*"
+			],
+			"run_at": "document_start"
+		}
+	],
+	"background": {
+		"scripts": [
+			"background.js"
+		]
+	},
+	"description": "Click to open link in new tab.",
+	"icons": {
+		"128": "icons/icon_128.png",
+		"32": "icons/icon_32.png",
+		"48": "icons/icon_48.png"
+	},
+	"browser_action": {
+		"default_icon": {
+			"128": "icons/icon_128.png",
+			"32": "icons/icon_32.png",
+			"48": "icons/icon_48.png"
+		}
+	},
+	"manifest_version": 2,
+	"name": "OpenInNewTap",
+	"options_page": "options_page/options.html",
+	"permissions": [
+		"tabs",
+		"storage",
+		"contextMenus"
+	],
+	"short_name": "Open In New Tab",
+	"version": "1.68"
+}
